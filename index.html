@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
         .slide-section {
             border-left: 4px solid #6366f1;
         }
+
         .image-placeholder {
             background-color: #f8fafc;
             border: 2px dashed #e2e8f0;
@@ -20,6 +22,7 @@
         }
     </style>
 </head>
+
 <body class="bg-white text-slate-900 font-sans">
 
     <!-- Header / Introducción -->
@@ -28,7 +31,8 @@
             <h1 class="text-6xl font-extrabold mb-6 tracking-tight">Aprendizaje No Supervisado</h1>
             <h2 class="text-6xl font-extrabold mb-6 tracking-tight">Microbios</h2>
             <p class="text-2xl text-slate-400 leading-relaxed max-w-2xl">
-                Descubriendo estructuras ocultas en datos no etiquetados para la toma de decisiones basada en patrones naturales.
+                Descubriendo estructuras ocultas en datos no etiquetados para la toma de decisiones basada en patrones
+                naturales.
             </p>
             <h1 class=""></h1>
             <div class="mt-12 flex items-center gap-8">
@@ -44,16 +48,27 @@
     </header>
 
     <main class="max-w-5xl mx-auto px-6 py-20">
-        
+
         <!-- Estado del Arte -->
         <section class="mb-32">
             <h2 class="text-4xl font-bold mb-8 text-indigo-600">Estado del Arte</h2>
             <div class="grid md:grid-cols-2 gap-12 text-xl leading-relaxed text-slate-600">
                 <p>
-                    Históricamente, la lectura del ADN (tecnología NGS) ha funcionado triturando el código genético en millones de fragmentos pequeños para luego rearmarlos como un rompecabezas, un proceso preciso pero que puede tardar días. Sin embargo, las nuevas tecnologías de tercera generación (TGS), como la secuenciación por nanoporos, permiten leer hebras de ADN larguísimas en tiempo real mientras pasan por un sensor eléctrico. Aunque esto es mucho más veloz, genera un volumen masivo de señales complejas que deben ser interpretadas de inmediato para ser útiles en entornos médicos de emergencia.
+                    Históricamente, la lectura del ADN (tecnología NGS) ha funcionado triturando el código genético en
+                    millones de fragmentos pequeños para luego rearmarlos como un rompecabezas, un proceso preciso pero
+                    que puede tardar días. Sin embargo, las nuevas tecnologías de tercera generación (TGS), como la
+                    secuenciación por nanoporos, permiten leer hebras de ADN larguísimas en tiempo real mientras pasan
+                    por un sensor eléctrico. Aunque esto es mucho más veloz, genera un volumen masivo de señales
+                    complejas que deben ser interpretadas de inmediato para ser útiles en entornos médicos de
+                    emergencia.
                 </p>
                 <p>
-                    El Estado del Arte actual se enfoca en el uso de Aprendizaje No Supervisado para procesar estas señales eléctricas sin necesidad de análisis humanos previos. En casos críticos como el shock séptico, donde la mortalidad sube un 7.6% por cada hora de retraso, algoritmos de clustering permiten agrupar y categorizar patrones genéticos de resistencia a antibióticos de forma instantánea. Así, la tecnología actual busca transformar datos crudos y desordenados en diagnósticos vitales en cuestión de minutos, eliminando la espera de los cultivos de laboratorio tradicionales.
+                    El Estado del Arte actual se enfoca en el uso de Aprendizaje No Supervisado para procesar estas
+                    señales eléctricas sin necesidad de análisis humanos previos. En casos críticos como el shock
+                    séptico, donde la mortalidad sube un 7.6% por cada hora de retraso, algoritmos de clustering
+                    permiten agrupar y categorizar patrones genéticos de resistencia a antibióticos de forma
+                    instantánea. Así, la tecnología actual busca transformar datos crudos y desordenados en diagnósticos
+                    vitales en cuestión de minutos, eliminando la espera de los cultivos de laboratorio tradicionales.
                 </p>
             </div>
         </section>
@@ -64,40 +79,45 @@
         <h2 class="text-5xl font-bold mb-16 text-center">Métodos Principales</h2>
 
         <div class="space-y-40">
-            
+
             <!-- Método 1 -->
             <article class="slide-section pl-8">
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 01</span>
-                <h3 class="text-4xl font-bold mb-6">K-Means Clustering</h3>
+                <h3 class="text-4xl font-bold mb-6">Mapa de Calor (Correlaciones)</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
-                    Agrupa los datos en "K" grupos definidos. Es el algoritmo más utilizado por su eficiencia computacional en grandes volúmenes de datos.
+                    Permite visualizar la fuerza de relación entre variables genéticas. Es el primer paso para entender
+                    qué características influyen más en la resistencia bacteriana.
                 </p>
-                <div class="image-placeholder italic text-slate-400 text-lg">
-                    [Insertar Imagen de K-Means aquí]
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="images/1.png" alt="Mapa de Calor"
+                        class="w-full h-auto object-cover border border-slate-200">
                 </div>
             </article>
 
             <!-- Método 2 -->
             <article class="slide-section pl-8">
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 02</span>
-                <h3 class="text-4xl font-bold mb-6">Clustering Jerárquico</h3>
+                <h3 class="text-4xl font-bold mb-6">Método del Codo (Elbow Method)</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
-                    Representa la relación entre datos mediante un <b>Dendrograma</b>. Ideal para entender la taxonomía y niveles de similitud entre grupos.
+                    Técnica fundamental para determinar el número óptimo de grupos (K). Nos indica el punto donde añadir
+                    más clusters ya no aporta una mejora significativa al modelo.
                 </p>
-                <div class="image-placeholder italic text-slate-400 text-lg">
-                    [Aquí puedes colocar el gráfico del Dendrograma que revisamos antes]
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="images/2.png" alt="Método del Codo"
+                        class="w-full h-auto object-cover border border-slate-200">
                 </div>
             </article>
 
             <!-- Método 3 -->
             <article class="slide-section pl-8">
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 03</span>
-                <h3 class="text-4xl font-bold mb-6">PCA (Análisis de Componentes Principales)</h3>
+                <h3 class="text-4xl font-bold mb-6">K-Means Clustering</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
-                    Técnica de reducción de dimensionalidad que proyecta los datos en nuevos ejes para maximizar la varianza explicada con menos variables.
+                    Algoritmo de particionamiento que agrupa las secuencias en grupos basados en la similitud de sus
+                    señales eléctricas, facilitando la identificación de especies.
                 </p>
-                <div class="image-placeholder italic text-slate-400 text-lg">
-                    [Insertar Imagen de PCA aquí]
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="images/3.png" alt="K-Means" class="w-full h-auto object-cover border border-slate-200">
                 </div>
             </article>
 
@@ -106,39 +126,66 @@
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 04</span>
                 <h3 class="text-4xl font-bold mb-6">DBSCAN</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
-                    Agrupa puntos basándose en su densidad. A diferencia de K-Means, puede encontrar formas irregulares y separar el ruido automáticamente.
+                    Clustering basado en densidad. Es excelente para filtrar el "ruido" de las señales de los nanoporos
+                    y encontrar grupos de bacterias con formas irregulares.
                 </p>
-                <div class="image-placeholder italic text-slate-400 text-lg">
-                    [Insertar Imagen de DBSCAN aquí]
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="images/4.png" alt="DBSCAN" class="w-full h-auto object-cover border border-slate-200">
                 </div>
             </article>
 
             <!-- Método 5 -->
             <article class="slide-section pl-8">
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 05</span>
-                <h3 class="text-4xl font-bold mb-6">Reglas de Asociación</h3>
+                <h3 class="text-4xl font-bold mb-6">Clustering Jerárquico Aglomerativo</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
-                    Algoritmos como Apriori que descubren dependencias probabilísticas entre variables (Si ocurre A, es probable que ocurra B).
+                    Construye una jerarquía de grupos de abajo hacia arriba. Es muy útil para visualizar la taxonomía
+                    bacteriana y qué tan emparentadas están las resistencias encontradas.
                 </p>
-                <div class="image-placeholder italic text-slate-400 text-lg">
-                    [Insertar Imagen de Association Rules aquí]
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="images/5.png" alt="Clustering Jerárquico"
+                        class="w-full h-auto object-cover border border-slate-200">
                 </div>
             </article>
 
             <!-- Método 6 -->
             <article class="slide-section pl-8">
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 06</span>
-                <h3 class="text-4xl font-bold mb-6">Isolation Forest</h3>
+                <h3 class="text-4xl font-bold mb-6">Análisis de Dendrograma</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
-                    Detección de anomalías mediante el aislamiento de observaciones. Es extremadamente eficaz para identificar fraudes o errores en datos.
+                    La representación visual del clustering jerárquico. Permite decidir con precisión dónde realizar el
+                    "corte" para definir las familias de bacterias identificadas.
                 </p>
-                <div class="image-placeholder italic text-slate-400 text-lg">
-                    [Insertar Imagen de Isolation Forest aquí]
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="images/6.png" alt="Dendrograma"
+                        class="w-full h-auto object-cover border border-slate-200">
                 </div>
             </article>
 
         </div>
         <hr class="mb-32 border-slate-200">
+        <section class="mb-32">
+            <h2 class="text-4xl font-bold mb-8 text-indigo-600">Conclusiones y Recomendaciones</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-xl leading-relaxed text-slate-600">
+                <p>
+                    Históricamente, la lectura del ADN (tecnología NGS) ha funcionado triturando el código genético en
+                    millones de fragmentos pequeños para luego rearmarlos como un rompecabezas, un proceso preciso pero
+                    que puede tardar días. Sin embargo, las nuevas tecnologías de tercera generación (TGS), como la
+                    secuenciación por nanoporos, permiten leer hebras de ADN larguísimas en tiempo real mientras pasan
+                    por un sensor eléctrico. Aunque esto es mucho más veloz, genera un volumen masivo de señales
+                    complejas que deben ser interpretadas de inmediato para ser útiles en entornos médicos de
+                    emergencia.
+                </p>
+                <p>
+                    El Estado del Arte actual se enfoca en el uso de Aprendizaje No Supervisado para procesar estas
+                    señales eléctricas sin necesidad de análisis humanos previos. En casos críticos como el shock
+                    séptico, donde la mortalidad sube un 7.6% por cada hora de retraso, algoritmos de clustering
+                    permiten agrupar y categorizar patrones genéticos de resistencia a antibióticos de forma
+                    instantánea. Así, la tecnología actual busca transformar datos crudos y desordenados en diagnósticos
+                    vitales en cuestión de minutos, eliminando la espera de los cultivos de laboratorio tradicionales.
+                </p>
+            </div>
+        </section>
 
     </main>
 
@@ -147,4 +194,5 @@
     </footer>
 
 </body>
+
 </html>
