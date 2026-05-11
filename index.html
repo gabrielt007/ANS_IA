@@ -113,6 +113,9 @@
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 03</span>
                 <h3 class="text-4xl font-bold mb-6">K-Means Clustering</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
+                    El análisis del gráfico muestra que K-Means logró identificar los 3 grupos que se superponen mucho,
+                    lo que indica que el modelo tiene problemas para diferenciar microorganismos con características
+                    similares mediante líneas rectas.
                     Algoritmo de particionamiento que agrupa las secuencias en grupos basados en la similitud de sus
                     señales eléctricas, facilitando la identificación de especies.
                 </p>
@@ -126,6 +129,9 @@
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 04</span>
                 <h3 class="text-4xl font-bold mb-6">DBSCAN</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
+                    El gráfico de DBSCAN muestra una estructura más complicada, donde el algoritmo ha encontrado un
+                    grupo principal con muchos puntos y ha separado otros grupos más pequeños, junto con algunos puntos
+                    que no encajan en ningún grupo.
                     Clustering basado en densidad. Es excelente para filtrar el "ruido" de las señales de los nanoporos
                     y encontrar grupos de bacterias con formas irregulares.
                 </p>
@@ -139,6 +145,8 @@
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 05</span>
                 <h3 class="text-4xl font-bold mb-6">Clustering Jerárquico Aglomerativo</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
+                    El gráfico del Clustering Jerárquico muestra una estructura de grupos más equilibrada, con tres
+                    regiones claras que se parecen a las de K-Means, pero con límites más suaves y menos rígidos.
                     Construye una jerarquía de grupos de abajo hacia arriba. Es muy útil para visualizar la taxonomía
                     bacteriana y qué tan emparentadas están las resistencias encontradas.
                 </p>
@@ -153,6 +161,9 @@
                 <span class="text-indigo-500 font-mono font-bold text-lg">MÉTODO 06</span>
                 <h3 class="text-4xl font-bold mb-6">Análisis de Dendrograma</h3>
                 <p class="text-xl text-slate-600 mb-8 max-w-3xl">
+                    El dendrograma muestra cómo se relacionan los microorganismos entre sí. Cuando se divide en tres
+                    grupos, el modelo los agrupa de manera que los especímenes dentro de cada grupo sean muy similares
+                    entre sí.
                     La representación visual del clustering jerárquico. Permite decidir con precisión dónde realizar el
                     "corte" para definir las familias de bacterias identificadas.
                 </p>
@@ -168,21 +179,20 @@
             <h2 class="text-4xl font-bold mb-8 text-indigo-600">Conclusiones y Recomendaciones</h2>
             <div class="grid md:grid-cols-2 gap-12 text-xl leading-relaxed text-slate-600">
                 <p>
-                    Históricamente, la lectura del ADN (tecnología NGS) ha funcionado triturando el código genético en
-                    millones de fragmentos pequeños para luego rearmarlos como un rompecabezas, un proceso preciso pero
-                    que puede tardar días. Sin embargo, las nuevas tecnologías de tercera generación (TGS), como la
-                    secuenciación por nanoporos, permiten leer hebras de ADN larguísimas en tiempo real mientras pasan
-                    por un sensor eléctrico. Aunque esto es mucho más veloz, genera un volumen masivo de señales
-                    complejas que deben ser interpretadas de inmediato para ser útiles en entornos médicos de
-                    emergencia.
+                    Tras comparar los tres modelos, se ve que la estructura de los datos de microorganismos es algo
+                    compleja. K-Means y el Clustering Jerárquico coinciden bastante, aunque con algún solapamiento. Sin
+                    embargo, DBSCAN muestra que la densidad no es uniforme y que hay muchos valores atípicos, es decir,
+                    especies con características muy particulares que se desvían del comportamiento general. El modelo
+                    jerárquico, como se ve en el dendrograma, es el más equilibrado para este conjunto de datos. Esto se
+                    debe a que logra definir fronteras más claras que K-Means sin llegar a la fragmentación excesiva de
+                    DBSCAN. De esta manera, permite una clasificación más natural.
                 </p>
                 <p>
-                    El Estado del Arte actual se enfoca en el uso de Aprendizaje No Supervisado para procesar estas
-                    señales eléctricas sin necesidad de análisis humanos previos. En casos críticos como el shock
-                    séptico, donde la mortalidad sube un 7.6% por cada hora de retraso, algoritmos de clustering
-                    permiten agrupar y categorizar patrones genéticos de resistencia a antibióticos de forma
-                    instantánea. Así, la tecnología actual busca transformar datos crudos y desordenados en diagnósticos
-                    vitales en cuestión de minutos, eliminando la espera de los cultivos de laboratorio tradicionales.
+                    Para mejorar la precisión de la agrupación en futuros análisis, es recomendable aplicar técnicas de
+                    selección de características antes de utilizar los modelos. Esto ayudará a identificar cuáles de las
+                    24 variables son más importantes para distinguir entre las especies. También sería útil ajustar los
+                    parámetros de DBSCAN para reducir el ruido en los resultados. De esta manera, se puede obtener una
+                    clasificación más precisa y fiable.
                 </p>
             </div>
         </section>
