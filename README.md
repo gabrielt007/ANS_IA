@@ -21,7 +21,7 @@ El análisis se estructura en 6 etapas clave de aprendizaje no supervisado:
 ## Recursos
 
 *   Dataset: [Microbes Dataset en Kaggle](https://www.kaggle.com/datasets/sayansh001/microbes-dataset) - Características morfológicas y genéticas de diversos microorganismos.
-*   Notebook de Desarrollo: [Google Colab - Análisis No Supervisado](https://colab.research.google.com/drive/1Ia0qzgZCxaY2dnpqcLGkiB5OO9gEQVFM?usp=sharing) - Código fuente en Python e implementación de modelos.
+*   Notebook de Desarrollo: [Google Colab - Análisis No Supervisado]([https://colab.research.google.com/drive/1Ia0qzgZCxaY2dnpqcLGkiB5OO9gEQVFM?usp=sharing](https://colab.research.google.com/drive/1Ia0qzgZCxaY2dnpqcLGkiB5OO9gEQVFM?usp=sharing)) - Código fuente en Python e implementación de modelos.
 
 ## Tecnologías Utilizadas
 
